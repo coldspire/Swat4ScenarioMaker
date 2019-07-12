@@ -1,0 +1,27 @@
+{
+  "name": "Swat4ScenarioMaker",
+  "version": "0.0.1",
+  "description": "A very silly little web app that provides generated scenario conditions for SWAT 4 multiplayer.",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Build does nothing yet\"",
+    "clean": "rimraf dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coldspire/Swat4ScenarioMaker.git"
+  },
+  "keywords": [],
+  "author": "Owen Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coldspire/Swat4ScenarioMaker/issues"
+  },
+  "homepage": "https://github.com/coldspire/Swat4ScenarioMaker#readme",
+  "private": true,
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "rimraf": "^2.6.3"
+  }
+}

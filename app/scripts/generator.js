@@ -15,5 +15,6 @@ export function generateAll(numPlayers) {
     for (var idx = 0; idx < numPlayers; idx++) {
         dummyData.push(generatePlayerDirective());
     }
+    dummyData.push('X'); // Wild-card temp data
     return dummyData;
 };
