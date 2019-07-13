@@ -4,9 +4,12 @@
   "description": "A very silly little web app that provides generated scenario conditions for SWAT 4 multiplayer.",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"Build does nothing yet\"",
     "clean": "rimraf dist",
-    "test": "jest"
+    "build": "mkdir dist && cp -r app/* dist",
+    "prebuild": "npm run clean",
+    "test": "jest",
+    "serve": "echo 'TODO' && exit 1",
+    "preserve": "npm run build"
   },
   "repository": {
     "type": "git",
