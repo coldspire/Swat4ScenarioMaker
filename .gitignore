@@ -1,4 +1,5 @@
-dist/
+# Ignore only the directories inside of dist, not the directory itself
+dist/**/*
 
 # Logs
 logs
