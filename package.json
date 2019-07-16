@@ -24,10 +24,12 @@
   "homepage": "https://github.com/coldspire/Swat4ScenarioMaker#readme",
   "private": true,
   "devDependencies": {
+    "css-loader": "^3.0.0",
     "install": "^0.13.0",
     "jest": "^24.8.0",
     "npm": "^6.10.1",
     "rimraf": "^2.6.3",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6"
   }
