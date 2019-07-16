@@ -4,8 +4,9 @@
   "description": "A very silly little web app that provides generated scenario conditions for SWAT 4 multiplayer.",
   "scripts": {
     "clean": "rimraf dist/**/*",
-    "build": "cp app/index.html dist/index.html && webpack",
-    "prebuild": "npm run clean",
+    "copyhtml": "cp app/index.html dist/index.html",
+    "build": "npm run clean && npm run copyhtml && webpack --mode=development",
+    "build:prod": "npm run clean && npm run copyhtml && webpack --mode=production",
     "test": "jest",
     "serve": "echo 'TODO' && exit 1",
     "preserve": "npm run build"
