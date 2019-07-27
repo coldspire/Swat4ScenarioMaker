@@ -3,10 +3,8 @@
   "version": "0.0.1",
   "description": "A very silly little web app that provides generated scenario conditions for SWAT 4 multiplayer.",
   "scripts": {
-    "clean": "rimraf dist/**/*",
-    "copyhtml": "cp app/index.html dist/index.html",
-    "build": "npm run clean && npm run copyhtml && webpack --mode=development",
-    "build:prod": "npm run clean && npm run copyhtml && webpack --mode=production",
+    "build": "webpack --mode=development",
+    "build:prod": "webpack --mode=production",
     "test": "jest",
     "serve": "echo 'TODO' && exit 1",
     "preserve": "npm run build"
@@ -24,11 +22,13 @@
   "homepage": "https://github.com/coldspire/Swat4ScenarioMaker#readme",
   "private": true,
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
     "install": "^0.13.0",
     "jest": "^24.8.0",
     "npm": "^6.10.1",
-    "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.6"
