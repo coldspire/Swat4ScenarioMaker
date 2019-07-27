@@ -11,6 +11,9 @@ module.exports = (env, options) => {
             generator: './app/scripts/generator.js'
         },
         devtool: (isProduction ? '' : 'eval-source-map'),
+        devServer: {
+            contentBase: './dist'
+        },
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({

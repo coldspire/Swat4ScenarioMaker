@@ -5,8 +5,8 @@
   "scripts": {
     "build": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
+    "start": "webpack-dev-server --open",
     "test": "jest",
-    "serve": "echo 'TODO' && exit 1",
     "preserve": "npm run build"
   },
   "repository": {
@@ -31,6 +31,7 @@
     "npm": "^6.10.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }
