@@ -7,8 +7,7 @@ module.exports = (env, options) => {
 
     return {
         entry: {
-            app: './app/index.js',
-            generator: './app/scripts/generator.js'
+            app: './app/index.js'
         },
         devtool: (isProduction ? '' : 'eval-source-map'),
         devServer: {
