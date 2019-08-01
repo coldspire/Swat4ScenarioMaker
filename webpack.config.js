@@ -7,7 +7,7 @@ module.exports = (env, options) => {
 
     return {
         entry: {
-            app: './app/index.js'
+            app: './app/app.js'
         },
         devtool: (isProduction ? '' : 'eval-source-map'),
         devServer: {

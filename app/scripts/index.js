@@ -1,7 +1,5 @@
-import './index.css';
-
-const playerDirectives = require('./assets/json/playerOptions.json');
-const wildcards = require('./assets/json/wildcardOptions.json');
+const playerDirectives = require('../assets/json/playerOptions.json');
+const wildcards = require('../assets/json/wildcardOptions.json');
 
 function getPlayerDirectives() {
     return playerDirectives;
