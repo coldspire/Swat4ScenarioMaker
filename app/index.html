@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SWAT 4 Scenario Maker</title>
+
+    <% for (var css in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    <% } %>
 </head> 
 <body>
-    <header>
-        <h1>SWAT 4 Scenario Maker</h1>
-    </header>
-    <main>
-        Everything fun goes here
-    </main>
+    <%= require('html-loader!./partials/_header.html') %>
+    <%= require('html-loader!./partials/_main.html') %>
+
+    
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+    
+    <% if (htmlWebpackPlugin.options.devServer) { %>
+    <script src="<%= htmlWebpackPlugin.options.devServer%>/webpack-dev-server.js"></script>
+    <% } %>
 </body>
 </html>

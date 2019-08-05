@@ -17,16 +17,7 @@ module.exports = (env, options) => {
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
                 inject: false,
-                template: require('html-webpack-template'),
-
-                lang: 'en-US',
-                meta: [
-                    { 
-                        name: 'viewport',
-                        content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-                    }
-                ],
-                title: 'SWAT 4 Scenario Generator',
+                template: './app/index.html'
             })
         ],
         output: {
