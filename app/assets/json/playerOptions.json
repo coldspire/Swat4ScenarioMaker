@@ -1,10 +1,14 @@
 [
     "Cannot use primary weapons",
     "Cannot use firearms",
-    "Must use pepper-ball gun for all shooting",
-    "Must use less-lethal shotgun for all shooting",
-    "Must not enter a room until all suspects are dead or gone",
+    "Must use M249 SAW for all shooting",
+    "Must use HK69 grenade launcher as primary weapon",
+    "Must use Pepperball gun for all shooting",
+    "Must use Less Lethal Nova shotgun for all shooting",
+    "Must use Colt Accurized Rifle for all shooting",
     "Must hit at least two suspects with a stun gun or Tazer",
     "Must hit a suspect with a throwable item",
-    "Can enter a room only after all other agents"
+    "Must enter a room after the other agent",
+    "All tactical items must be door wedges",
+    "Must kill all suspects at point-blank range"
 ]
