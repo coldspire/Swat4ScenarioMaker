@@ -39,4 +39,14 @@ function getDirectives(numPlayers, unique) {
     };
 };
 
-console.log(getDirectives(2, false));
+function changeTextById(text, elementId) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        element.innerText = text;
+    }
+};
+
+const directives = getDirectives(2, false);
+changeTextById(directives.directives.perPlayer[0], "playerOneDirective");
+changeTextById(directives.directives.perPlayer[1], "playerTwoDirective");
+changeTextById(directives.wildcard, "wildcardDirective");

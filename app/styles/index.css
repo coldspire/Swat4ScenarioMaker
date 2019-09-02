@@ -11,5 +11,61 @@
 }
 
 body {
-    padding: 1rem;
+    width: 66%;
+    margin: auto;
+    margin-top: 15vh;
+}
+
+@media only screen AND (max-width: 750px) {
+    body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 1rem;
+        width: calc(100% - 4rem);
+    }
+}
+
+header {
+    margin-bottom: 1rem;
+}
+
+main {
+    display: grid;
+
+    --gap: 20px;
+    grid-gap: var(--gap);
+    gap: var(--gap);
+
+    grid-template-areas: 
+        "location location ."
+        "playerone playertwo wildcard";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto; 
+}
+
+@media only screen AND (max-width: 750px) {
+    main {
+        grid-template-areas:
+            "location"
+            "playerone"
+            "playertwo"
+            "wildcard";
+        grid-template-columns: 1fr;
+    }
+}
+
+.location {
+    grid-area: location;
+}
+
+.playerone {
+    grid-area: playerone;
+}
+
+.playertwo {
+    grid-area: playertwo;
+}
+
+.wildcard {
+    grid-area: wildcard;
 }
