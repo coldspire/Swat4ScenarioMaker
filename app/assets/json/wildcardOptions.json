@@ -1,7 +1,11 @@
 [
     "Doors can be opened only by C-2 or breaching shotgun",
     "Optiwand is forbidden",
-    "Agents must always run",
-    "Hostiles must be punched before they can be shot",
-    "Rooms must be cleared from multiple entrances where possible"
+    "Agents must always run everywhere",
+    "Rooms must be cleared from multiple entrances where possible",
+    "Agents must enter rooms while under Stinger influence",
+    "Agents must unlock and breach room within 30 seconds",
+    "Hostiles must be pepper-sprayed before any further action is taken",
+    "Agents must say \"This mother's gonna blow big\" before using throwables",
+    "Hostiles must be taken down through non-lethal means"
 ]
