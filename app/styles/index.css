@@ -54,6 +54,18 @@ main {
     }
 }
 
+.options {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 1rem 0;
+}
+
+.options li:not(:last-child) {
+    margin-right: 1rem;
+}
+
 .location {
     grid-area: location;
 }

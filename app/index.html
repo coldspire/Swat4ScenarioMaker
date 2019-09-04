@@ -12,6 +12,7 @@
 </head> 
 <body>
     <%= require('html-loader!./partials/_header.html') %>
+    <%= require('html-loader!./partials/_options.html') %>
     <%= require('html-loader!./partials/_main.html') %>
     
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
