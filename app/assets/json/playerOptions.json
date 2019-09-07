@@ -1,14 +1,62 @@
 [
-    "Cannot use primary weapons",
-    "Cannot use firearms",
-    "Must use M249 SAW for all shooting",
-    "Must use HK69 grenade launcher as primary weapon",
-    "Must use Pepperball gun for all shooting",
-    "Must use Less Lethal Nova shotgun for all shooting",
-    "Must use Colt Accurized Rifle for all shooting",
-    "Must hit at least two suspects with a stun gun or Tazer",
-    "Must hit a suspect with a throwable item",
-    "Must enter a room after the other agent",
-    "All tactical items must be door wedges",
-    "Must kill all suspects at point-blank range"
+    {
+        "type": "player",
+        "text": "Cannot use primary weapons",
+        "lethal": null
+    },
+    {
+        "type": "player",
+        "text": "Cannot use firearms",
+        "lethal": false
+    },
+    {
+        "type": "player",
+        "text": "Must use M249 SAW for all shooting",
+        "lethal": true
+    },
+    {
+        "type": "player",
+        "text": "Must use HK69 grenade launcher as primary weapon",
+        "lethal": true
+    },
+    {
+        "type": "player",
+        "text": "Must use Pepperball gun for all shooting",
+        "lethal": false
+    },
+    {
+        "type": "player",
+        "text": "Must use Less Lethal Nova shotgun for all shooting",
+        "lethal": false
+    },
+    {
+        "type": "player",
+        "text": "Must use Colt Accurized Rifle for all shooting",
+        "lethal": true
+    },
+    {
+        "type": "player",
+        "text": "Must hit at least two suspects with a stun gun or Tazer",
+        "lethal": false
+    },
+    {
+        "type": "player",
+        "text": "Must hit a suspect with a throwable item",
+        "lethal": null
+    },
+    {
+        "type": "player",
+        "text": "Must enter a room after the other agent",
+        "lethal": null
+    },
+    {
+        "type": "player",
+        "text": "All tactical items must be door wedges",
+        "lethal": null
+    },
+    {
+        "type": "player",
+        "text": "Must kill all suspects at point-blank range",
+        "lethal": null
+    }
 ]
