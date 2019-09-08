@@ -1,5 +1,6 @@
 const playerDirectives = [ ...require('../assets/json/playerOptions.json')];
 const wildcards = [ ...require('../assets/json/wildcardOptions.json')];
+const locations = [ ...require('../assets/json/locations.json')];
 
 import '../styles/index.css'; 
 
@@ -23,6 +24,18 @@ function getWildcards(nonLethal) {
     }
 
     return directives;
+}
+
+function getLocation(includeUnavailable) {
+    let locs;
+    if (includeUnavailable) {
+        locs = locations;
+    } else {
+        locs = locations.filter(loc => loc.available);
+    }
+    
+    const location = locs[getRandomIndex(locations.length - 1)];
+    return location;
 }
 
 function getRandomIndex(max) {
@@ -65,9 +78,12 @@ function changeTextById(text, elementId) {
 export function refreshAll() {
     const isUnique = document.getElementById('is-unique').checked;
     const isNonLethal = document.getElementById('is-nonlethal').checked;
+    const onlyAvailableLocations = document.getElementById('only-available-locations').checked;
 
     const directives = getDirectives(2, isUnique, isNonLethal);
+    const location = getLocation(onlyAvailableLocations);
 
+    changeTextById(location.description, "location");
     changeTextById(directives.directives.perPlayer[0].text, "playerOneDirective");
     changeTextById(directives.directives.perPlayer[1].text, "playerTwoDirective");
     changeTextById(directives.wildcard.text, "wildcardDirective");

@@ -1,0 +1,54 @@
+[
+    {
+        "description": "Food Wall Restaurant",
+        "available": true
+    },
+    {
+        "description": "Fairfax Residence",
+        "available": true
+    },
+    {
+        "description": "Qwik Fuel Convenience Store",
+        "available": true
+    },
+    {
+        "description": "A-Bomb Nightclub",
+        "available": null
+    },
+    {
+        "description": "Victory Imports Auto Center",
+        "available": true
+    },
+    {
+        "description": "Red Library Offices",
+        "available": false
+    },
+    {
+        "description": "Northside Vending and Amusements",
+        "available": false
+    },
+    {
+        "description": "Duplessis Wholesale Diamond Center",
+        "available": true
+    },
+    {
+        "description": "Children of Taronne Tenement",
+        "available": false
+    },
+    {
+        "description": "St. Michael’s Medical Center",
+        "available": false
+    },
+    {
+        "description": "The Wolcott Projects",
+        "available": false
+    },
+    {
+        "description": "The Old Granite Hotel",
+        "available": false
+    },
+    {
+        "description": "Mount Threshold Research Center ",
+        "available": false
+    }
+]
