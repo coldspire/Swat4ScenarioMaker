@@ -7,7 +7,7 @@ module.exports = (env, options) => {
 
     return {
         entry: {
-            app: './app/app.js'
+            app: './app/scripts/index.js'
         },
         devtool: (isProduction ? '' : 'eval-source-map'),
         devServer: {
@@ -22,7 +22,9 @@ module.exports = (env, options) => {
         ],
         output: {
             filename: '[name].bundle.js',
-            path: path.resolve(__dirname, 'dist')
+            path: path.resolve(__dirname, 'dist'),
+            library: "Index",
+            libraryTarget: "var"
         },
         module: {
             rules: [

@@ -1,6 +1,8 @@
 const playerDirectives = [ ...require('../assets/json/playerOptions.json')];
 const wildcards = [ ...require('../assets/json/wildcardOptions.json')];
 
+import '../styles/index.css'; 
+
 function getPlayerDirectives(nonLethal) {
     let directives;
     if (nonLethal) {
@@ -60,7 +62,7 @@ function changeTextById(text, elementId) {
     }
 };
 
-function refreshAll() {
+export function refreshAll() {
     const isUnique = document.getElementById('is-unique').checked;
     const isNonLethal = document.getElementById('is-nonlethal').checked;
 
@@ -73,5 +75,3 @@ function refreshAll() {
 
 document.getElementById('is-unique').addEventListener('change', refreshAll);
 document.getElementById('is-nonlethal').addEventListener('change', refreshAll);
-
-refreshAll();
