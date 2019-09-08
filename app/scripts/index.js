@@ -1,7 +1,8 @@
 const playerDirectives = [ ...require('../assets/json/playerOptions.json')];
 const wildcards = [ ...require('../assets/json/wildcardOptions.json')];
+const locations = [ ...require('../assets/json/locations.json')];
 
-import '../styles/index.css'; 
+import '../styles/index.css';
 
 function getPlayerDirectives(nonLethal) {
     let directives;
@@ -23,6 +24,18 @@ function getWildcards(nonLethal) {
     }
 
     return directives;
+}
+
+function getLocation(includeUnpreferred) {
+    let locs;
+    if (includeUnpreferred) {
+        locs = locations.filter(loc => loc.preferred !== null);
+    } else {
+        locs = locations.filter(loc => loc.preferred);
+    }
+    
+    const location = locs[getRandomIndex(locs.length - 1)];
+    return location;
 }
 
 function getRandomIndex(max) {
@@ -62,7 +75,7 @@ function changeTextById(text, elementId) {
     }
 };
 
-export function refreshAll() {
+export function refreshDirectives() {
     const isUnique = document.getElementById('is-unique').checked;
     const isNonLethal = document.getElementById('is-nonlethal').checked;
 
@@ -73,5 +86,19 @@ export function refreshAll() {
     changeTextById(directives.wildcard.text, "wildcardDirective");
 }
 
-document.getElementById('is-unique').addEventListener('change', refreshAll);
-document.getElementById('is-nonlethal').addEventListener('change', refreshAll);
+export function refreshLocation(event) {
+    const onlyPreferredLocations = document.getElementById('only-preferred-locations').checked;
+
+    const location = getLocation(onlyPreferredLocations);
+
+    changeTextById(location.description, "location");
+}
+
+export function refreshAll() {
+    refreshDirectives();
+    refreshLocation();
+}
+
+document.getElementById('is-unique').addEventListener('change', refreshDirectives);
+document.getElementById('is-nonlethal').addEventListener('change', refreshDirectives);
+document.getElementById('only-preferred-locations').addEventListener('change', refreshLocation);
