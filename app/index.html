@@ -10,7 +10,7 @@
     <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
     <% } %>
 </head> 
-<body>
+<body onload="Index.refreshAll()">
     <%= require('html-loader!./partials/_header.html') %>
     <%= require('html-loader!./partials/_options.html') %>
     <%= require('html-loader!./partials/_main.html') %>
