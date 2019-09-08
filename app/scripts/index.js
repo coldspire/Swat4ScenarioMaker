@@ -2,7 +2,7 @@ const playerDirectives = [ ...require('../assets/json/playerOptions.json')];
 const wildcards = [ ...require('../assets/json/wildcardOptions.json')];
 const locations = [ ...require('../assets/json/locations.json')];
 
-import '../styles/index.css'; 
+import '../styles/index.css';
 
 function getPlayerDirectives(nonLethal) {
     let directives;
@@ -34,7 +34,7 @@ function getLocation(includeUnavailable) {
         locs = locations.filter(loc => loc.available);
     }
     
-    const location = locs[getRandomIndex(locations.length - 1)];
+    const location = locs[getRandomIndex(locs.length - 1)];
     return location;
 }
 
@@ -75,19 +75,30 @@ function changeTextById(text, elementId) {
     }
 };
 
-export function refreshAll() {
+export function refreshDirectives() {
     const isUnique = document.getElementById('is-unique').checked;
     const isNonLethal = document.getElementById('is-nonlethal').checked;
-    const onlyAvailableLocations = document.getElementById('only-available-locations').checked;
 
     const directives = getDirectives(2, isUnique, isNonLethal);
-    const location = getLocation(onlyAvailableLocations);
 
-    changeTextById(location.description, "location");
     changeTextById(directives.directives.perPlayer[0].text, "playerOneDirective");
     changeTextById(directives.directives.perPlayer[1].text, "playerTwoDirective");
     changeTextById(directives.wildcard.text, "wildcardDirective");
 }
 
-document.getElementById('is-unique').addEventListener('change', refreshAll);
-document.getElementById('is-nonlethal').addEventListener('change', refreshAll);
+export function refreshLocation(event) {
+    const onlyAvailableLocations = document.getElementById('only-available-locations').checked;
+
+    const location = getLocation(onlyAvailableLocations);
+
+    changeTextById(location.description, "location");
+}
+
+export function refreshAll() {
+    refreshDirectives();
+    refreshLocation();
+}
+
+document.getElementById('is-unique').addEventListener('change', refreshDirectives);
+document.getElementById('is-nonlethal').addEventListener('change', refreshDirectives);
+document.getElementById('only-available-locations').addEventListener('change', refreshLocation);
