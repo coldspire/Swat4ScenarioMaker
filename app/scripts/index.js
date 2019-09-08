@@ -26,12 +26,12 @@ function getWildcards(nonLethal) {
     return directives;
 }
 
-function getLocation(includeUnavailable) {
+function getLocation(includeUnpreferred) {
     let locs;
-    if (includeUnavailable) {
-        locs = locations;
+    if (includeUnpreferred) {
+        locs = locations.filter(loc => loc.preferred !== null);
     } else {
-        locs = locations.filter(loc => loc.available);
+        locs = locations.filter(loc => loc.preferred);
     }
     
     const location = locs[getRandomIndex(locs.length - 1)];
@@ -87,9 +87,9 @@ export function refreshDirectives() {
 }
 
 export function refreshLocation(event) {
-    const onlyAvailableLocations = document.getElementById('only-available-locations').checked;
+    const onlyPreferredLocations = document.getElementById('only-preferred-locations').checked;
 
-    const location = getLocation(onlyAvailableLocations);
+    const location = getLocation(onlyPreferredLocations);
 
     changeTextById(location.description, "location");
 }
@@ -101,4 +101,4 @@ export function refreshAll() {
 
 document.getElementById('is-unique').addEventListener('change', refreshDirectives);
 document.getElementById('is-nonlethal').addEventListener('change', refreshDirectives);
-document.getElementById('only-available-locations').addEventListener('change', refreshLocation);
+document.getElementById('only-preferred-locations').addEventListener('change', refreshLocation);
