@@ -70,7 +70,7 @@ function pickWildcard() {
 
 function pickLocation() {
     const locationsAll = getAllLocations();
-    const location = locationsAll[getRandomIndex(locs.length - 1)];
+    const location = locationsAll[getRandomIndex(locationsAll.length - 1)];
 
     return location;
 }
