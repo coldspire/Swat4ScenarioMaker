@@ -131,7 +131,8 @@ main {
     margin-right: 1rem;
 }
 
-.options-list li label {    
+.options-list li label {
+    user-select: none;
     cursor: pointer;
 }
 
