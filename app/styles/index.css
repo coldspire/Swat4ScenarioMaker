@@ -87,12 +87,12 @@ main {
 
 .options {
     display: grid;
-    grid-template-columns: minmax(min-content, 1fr) 3fr;
+    grid-template-columns: 1fr 3fr;
     justify-content: center;
     align-items: center;
     gap: 1rem;
 
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
 
     border: 0;
 }
@@ -130,3 +130,47 @@ main {
 .options-list li:not(:last-child) {
     margin-right: 1rem;
 }
+
+.options-list li label {    
+    cursor: pointer;
+}
+
+/** Checkbox styling **/
+
+.options {    
+    --checkbox-dim: 0.75rem;
+}
+
+/* Actual checkbox is hidden */
+.options input[type="checkbox"] {
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+.options .checkbox-custom {
+    font-size: calc(1rem + var(--checkbox-dim));
+
+    display: inline-block;
+    height: var(--checkbox-dim);
+    width: var(--checkbox-dim);
+
+    position: relative;
+
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.options input[type="checkbox"]:checked ~ .checkbox-custom {
+    background-color: #555;
+}
+
+.options input[type="checkbox"]:checked ~ .checkbox-custom::after {
+    position: absolute;
+    top: calc(var(--checkbox-dim) * -1);
+    height: var(--checkbox-dim);
+    width: var(--checkbox-dim);
+    content: '\00d7';
+}
+
+/** **/
