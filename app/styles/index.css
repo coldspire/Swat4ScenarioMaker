@@ -21,6 +21,9 @@ body {
 
     background: black;
     color: white;
+
+    background: black no-repeat url("/assets/images/01_bg.jpg");
+    background-size: cover;
 }
 
 @media only screen AND (max-width: 750px) {
@@ -37,6 +40,7 @@ header {
 }
 
 main {
+    background-color: rgba(0, 0, 0, 0.8);
     display: grid;
 
     --gap: 20px;
@@ -44,7 +48,7 @@ main {
     gap: var(--gap);
 
     grid-template-areas: 
-        "location location ."
+        "location location location"
         "playerone playertwo wildcard";
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto; 
@@ -175,3 +179,7 @@ main {
 }
 
 /** **/
+
+section.directive {
+    padding: 0.5rem 1rem;
+}
