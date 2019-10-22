@@ -97,6 +97,12 @@ main {
     color: white;
 }
 
+@media (max-width: 750px) {
+    .options {
+        grid-template-columns: 1fr;
+    }
+}
+
 .options:hover {
     background-color: #282828;
 }
@@ -119,6 +125,12 @@ main {
 
     font-size: 1.2rem;
     text-transform: uppercase;
+}
+
+@media (max-width: 750px) {
+    .options-list {
+        font-size: 1rem;
+    }
 }
 
 .options-list li {
