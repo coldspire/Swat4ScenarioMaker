@@ -54,22 +54,13 @@ main {
     grid-gap: var(--gap);
     gap: var(--gap);
 
-    grid-template-areas: 
-        "location location location"
-        "playerone playertwo wildcard";
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "location"
+        "playerone"
+        "playertwo"
+        "wildcard";
+    grid-template-columns: 1fr;
     grid-template-rows: auto; 
-}
-
-@media only screen AND (max-width: 750px) {
-    main {
-        grid-template-areas:
-            "location"
-            "playerone"
-            "playertwo"
-            "wildcard";
-        grid-template-columns: 1fr;
-    }
 }
 
 .location {
