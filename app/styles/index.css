@@ -1,7 +1,5 @@
 /* index.css */
 
-@import url('https://fonts.googleapis.com/css?family=Teko:400,600&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +7,11 @@
 
 :root {
     font-size: 16pt;
-    font-family: 'Teko', sans-serif;
+    font-family: sans-serif;
     font-weight: 400;
     letter-spacing: 0.1rem;
+
+    --bg-black80pct: rgba(0, 0, 0, 0.8);
 }
 
 body {
@@ -20,10 +20,10 @@ body {
     margin-top: 15vh;
 
     background: black;
-    color: white;
+    color: #CCC;
 
-    background: black no-repeat url("/assets/images/01_bg.jpg");
-    background-size: cover;
+    background: black url("/assets/images/01_bg-edit.jpg");
+    background-size: 100%;
 }
 
 @media only screen AND (max-width: 750px) {
@@ -37,10 +37,17 @@ body {
 
 header {
     margin-bottom: 1rem;
+    padding: 1rem 0;
+    background-color: black;
+
+    font-size: 0.9rem;
+    text-align: center;
+    font-style: italic;
+    text-transform: uppercase;
 }
 
 main {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--bg-black80pct);
     display: grid;
 
     --gap: 20px;
@@ -82,7 +89,7 @@ main {
 }
 
 .options-container {
-    background-color: #111;
+    background-color: #161616;
 
     border-radius: 10px;
     overflow: hidden;
@@ -99,10 +106,12 @@ main {
     padding: 0.5rem 1rem;
 
     border: 0;
+
+    color: white;
 }
 
 .options:hover {
-    background-color: #222;
+    background-color: #282828;
 }
 
 .options-header {
@@ -112,12 +121,6 @@ main {
     font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-
-    transition: padding-left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);;
-}
-
-.options:hover > .options-header {
-    padding-left: 1rem;
 }
 
 .options-list {
@@ -129,6 +132,14 @@ main {
 
     font-size: 1.2rem;
     text-transform: uppercase;
+}
+
+.options-list li {
+    transition: padding-left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.options-list li:hover {
+    padding-left: 0.5rem;
 }
 
 .options-list li:not(:last-child) {
