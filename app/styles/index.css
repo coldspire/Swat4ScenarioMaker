@@ -17,7 +17,7 @@
 body {
     width: 66%;
     margin: auto;
-    margin-top: 15vh;
+    margin-top: 5vh;
 
     background: black;
     color: #CCC;
@@ -110,10 +110,16 @@ main {
 .options-header {
     display: inline-block;
 
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: bolder;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+
+    transition: padding-left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.options:hover > .options-header {
+    padding-left: 0.5rem;
 }
 
 .options-list {
@@ -131,14 +137,6 @@ main {
     .options-list {
         font-size: 1rem;
     }
-}
-
-.options-list li {
-    transition: padding-left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.options-list li:hover {
-    padding-left: 0.5rem;
 }
 
 .options-list li:not(:last-child) {
