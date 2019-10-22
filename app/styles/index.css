@@ -21,9 +21,6 @@ body {
 
     background: black;
     color: #CCC;
-
-    background: black url("/assets/images/01_bg-edit.jpg");
-    background-size: 100%;
 }
 
 @media only screen AND (max-width: 750px) {
@@ -38,12 +35,11 @@ body {
 header {
     margin-bottom: 1rem;
     padding: 1rem 0;
-    background-color: black;
 
-    font-size: 0.9rem;
-    text-align: center;
-    font-style: italic;
+    color: white;
+    font-size: 1.2rem;    
     text-transform: uppercase;
+    letter-spacing: 0.1rem;
 }
 
 main {
