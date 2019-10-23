@@ -59,6 +59,11 @@ main {
     grid-template-rows: auto; 
 }
 
+main h2 {
+    font-size: 1.22rem;
+    text-transform: uppercase;
+}
+
 .location {
     grid-area: location;
 }
