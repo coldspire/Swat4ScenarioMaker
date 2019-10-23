@@ -34,12 +34,30 @@ body {
 
 header {
     margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding: 0.5rem 1rem;
 
-    color: white;
-    font-size: 1.2rem;    
+    font-size: 1.25rem;
+    color: white;  
     text-transform: uppercase;
-    letter-spacing: 0.1rem;
+    letter-spacing: -5px;
+    font-style: italic;
+}
+
+.text--swatblue {
+    --outline-color: white;
+
+    color: #142b96;
+
+    /* Abusing text-shadow to create a text border... */
+    text-shadow: 
+        1px 1px 2px var(--outline-color),
+        -1px -1px 2px var(--outline-color),
+        -1px 1px 2px var(--outline-color),
+        1px -1px 2px var(--outline-color),
+        2px 0px var(--outline-color),
+        0px 2px var(--outline-color),
+        -2px 0 var(--outline-color),
+        0px -2px var(--outline-color);
 }
 
 main {
