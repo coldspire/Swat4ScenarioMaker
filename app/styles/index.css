@@ -6,14 +6,21 @@
 }
 
 :root {
-    font-size: 14pt;
+    font-size: 16pt;
     font-family: sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+
+    --bg-black80pct: rgba(0, 0, 0, 0.8);
 }
 
 body {
     width: 66%;
     margin: auto;
-    margin-top: 15vh;
+    margin-top: 5vh;
+
+    background: black;
+    color: #CCC;
 }
 
 @media only screen AND (max-width: 750px) {
@@ -27,43 +34,56 @@ body {
 
 header {
     margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+
+    font-size: 1.25rem;
+    color: white;  
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-style: italic;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.text--swatblue {
+    --outline-color: white;
+
+    color: #142b96;
+
+    /* Abusing text-shadow to create a text border... */
+    text-shadow: 
+        1px 1px 2px var(--outline-color),
+        -1px -1px 2px var(--outline-color),
+        -1px 1px 2px var(--outline-color),
+        1px -1px 2px var(--outline-color),
+        2px 0px var(--outline-color),
+        0px 2px var(--outline-color),
+        -2px 0 var(--outline-color),
+        0px -2px var(--outline-color);
 }
 
 main {
+    background-color: var(--bg-black80pct);
     display: grid;
 
     --gap: 20px;
     grid-gap: var(--gap);
     gap: var(--gap);
 
-    grid-template-areas: 
-        "location location ."
-        "playerone playertwo wildcard";
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "location"
+        "playerone"
+        "playertwo"
+        "wildcard";
+    grid-template-columns: 1fr;
     grid-template-rows: auto; 
 }
 
-@media only screen AND (max-width: 750px) {
-    main {
-        grid-template-areas:
-            "location"
-            "playerone"
-            "playertwo"
-            "wildcard";
-        grid-template-columns: 1fr;
-    }
-}
-
-.options {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-start;
-
-    margin: 1rem 0;
-}
-
-.options li:not(:last-child) {
-    margin-right: 1rem;
+main h2 {
+    font-size: 1.22rem;
+    text-transform: uppercase;
 }
 
 .location {
@@ -80,4 +100,121 @@ main {
 
 .wildcard {
     grid-area: wildcard;
+}
+
+.options-container {
+    background-color: #161616;
+
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.5rem 1rem;
+
+    border: 0;
+
+    color: white;
+}
+
+@media (max-width: 750px) {
+    .options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.options:hover {
+    background-color: #282828;
+}
+
+.options-header {
+    display: inline-block;
+
+    font-size: 1.25rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+    transition: padding-left 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.options:hover > .options-header {
+    padding-left: 0.5rem;
+}
+
+.options-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    list-style-type: none;
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+@media (max-width: 750px) {
+    .options-list {
+        font-size: 1rem;
+    }
+}
+
+.options-list li:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.options-list li label {
+    user-select: none;
+    cursor: pointer;
+}
+
+/** Checkbox styling **/
+
+.options {    
+    --checkbox-dim: 0.75rem;
+}
+
+/* Actual checkbox is hidden */
+.options input[type="checkbox"] {
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+.options .checkbox-custom {
+    font-size: calc(1rem + var(--checkbox-dim));
+
+    display: inline-block;
+    height: var(--checkbox-dim);
+    width: var(--checkbox-dim);
+
+    position: relative;
+
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.options input[type="checkbox"]:checked ~ .checkbox-custom {
+    background-color: #555;
+}
+
+.options input[type="checkbox"]:checked ~ .checkbox-custom::after {
+    position: absolute;
+    top: calc(var(--checkbox-dim) * -1);
+    height: var(--checkbox-dim);
+    width: var(--checkbox-dim);
+    content: '\00d7';
+}
+
+/** **/
+
+section.directive {
+    padding: 0.5rem 1rem;
 }
