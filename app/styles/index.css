@@ -41,6 +41,10 @@ header {
     text-transform: uppercase;
     letter-spacing: -5px;
     font-style: italic;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .text--swatblue {
