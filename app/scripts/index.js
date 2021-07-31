@@ -107,6 +107,8 @@ export function refreshAll() {
     refreshLocation();
 }
 
+document.addEventListener('DOMContentLoaded', refreshAll);
+document.getElementById('refresher').addEventListener('click', refreshAll);
 document.getElementById('is-unique').addEventListener('change', refreshDirectives);
 document.getElementById('is-nonlethal').addEventListener('change', refreshDirectives);
 document.getElementById('only-preferred-locations').addEventListener('change', refreshLocation);

@@ -68,6 +68,8 @@ main {
     background-color: var(--bg-black80pct);
     display: grid;
 
+    position: relative;
+
     --gap: 20px;
     grid-gap: var(--gap);
     gap: var(--gap);
@@ -81,9 +83,33 @@ main {
     grid-template-rows: auto; 
 }
 
+
 main h2 {
     font-size: 1.22rem;
     text-transform: uppercase;
+}
+
+.refresher {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.refresher button {
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.2;
+    padding: 0.5rem;
+}
+
+.refresher button:hover {
+    background: #111;
+}
+
+.refresher button:active {
+    background: #222;
 }
 
 .location {
