@@ -11,9 +11,9 @@
     <% } %>
 </head> 
 <body onload="Index.refreshAll()">
-    <%= require('html-loader!./partials/_header.html') %>
-    <%= require('html-loader!./partials/_options.html') %>
-    <%= require('html-loader!./partials/_main.html') %>
+    <%= require('html-loader!./partials/_header.html').default %>
+    <%= require('html-loader!./partials/_options.html').default %>
+    <%= require('html-loader!./partials/_main.html').default %>
     
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>

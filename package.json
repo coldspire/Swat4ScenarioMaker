@@ -1,11 +1,11 @@
 {
-  "name": "Swat4ScenarioMaker",
+  "name": "swat4-scenario-maker",
   "version": "0.0.1",
   "description": "A very silly little web app that provides generated scenario conditions for SWAT 4 multiplayer.",
   "scripts": {
     "build": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
-    "start": "webpack-dev-server --open",
+    "start": "webpack serve --mode=development",
     "test": "jest",
     "preserve": "npm run build"
   },

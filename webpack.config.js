@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, options) => {
     const isProduction = (options && options.mode === 'production') || false;
@@ -17,12 +16,9 @@ module.exports = (env, options) => {
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
-                inject: false,
+                inject: 'body',
                 template: './app/index.html'
-            }),
-            new CopyWebpackPlugin([
-              { from: 'app/assets/images', to: 'assets/images' }
-            ]),
+            })
         ],
         output: {
             filename: '[name].bundle.js',
