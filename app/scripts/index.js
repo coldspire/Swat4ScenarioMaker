@@ -1,6 +1,7 @@
 const playerDirectives = [ ...require('../assets/json/playerOptions.json')];
 const wildcards = [ ...require('../assets/json/wildcardOptions.json')];
 const locations = [ ...require('../assets/json/locations.json')];
+import { getMission } from './mission-maker';
 
 import '../styles/index.css';
 
@@ -102,9 +103,22 @@ export function refreshLocation(event) {
     changeTextById(location.description, "location");
 }
 
+export function refreshMission() {
+    const missionEl = document.getElementById('mission');
+    const missionParas = getMission();
+
+    missionParas.forEach((missionPara) => {
+        const newPara = document.createElement('p');
+        newPara.classList.add('mission-para');
+        newPara.textContent = missionPara;
+        missionEl.appendChild(newPara);
+    });
+}
+
 export function refreshAll() {
     refreshDirectives();
     refreshLocation();
+    refreshMission();
 }
 
 document.addEventListener('DOMContentLoaded', refreshAll);

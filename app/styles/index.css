@@ -239,7 +239,10 @@ main h2 {
     content: '\00d7';
 }
 
-/** **/
+.mission-para + .mission-para {
+    line-height: 1.25em;
+    margin-top: 1em;
+}
 
 section.directive {
     padding: 0.5rem 1rem;
