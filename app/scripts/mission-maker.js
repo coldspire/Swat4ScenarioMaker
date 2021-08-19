@@ -1,3 +1,5 @@
+import { getCriminalFillins } from '../assets/mission/criminals';
+
 const timespan = 'two months';
 
 const policeOrg = {
@@ -30,30 +32,7 @@ const detectiveName = {
   },
 };
 
-const criminalNameA = {
-  first: 'Lian',
-  last: 'Niu',
-  get full() {
-    return `${this.first} ${this.last}`;
-  },
-};
-
-const criminalNameB = {
-  first: 'Alex',
-  last: 'Jiminez',
-  nickname: 'The Knife',
-  get full() {
-    return `${this.first} ${this.last}`;
-  },
-  profession: 'hit man',
-  descriptors: ['armed', 'dangerous'],
-  nationality: 'Colombian'
-};
-
-const crime = {
-  singular: 'homicide',
-  plural: 'homicides',
-};
+const { criminalNameA, criminalNameB, crime } = getCriminalFillins();
 
 const exitComment = 'So take a careful look at the floor plans, plan your entry, and gear up.';
 
@@ -70,7 +49,7 @@ const missionTemplatePara2 = `
     Ten minutes ago, ${detectiveName.full} sighted ${criminalNameB.full} entering the ${locationName.buildingType}. 
     Look at your files; ${criminalNameB.full}, also known as “${criminalNameB.nickname},” is a ${criminalNameB.profession} with ${criminalNameB.nationality} connections. 
     He’s a key suspect in multiple ${crime.plural} over the last year and half. 
-    ${criminalNameB.last} should be considered ${criminalNameB.descriptors[0]} and ${criminalNameB.descriptors[1]}.
+    ${criminalNameB.last} should be considered ${criminalNameB.descriptors.first} and ${criminalNameB.descriptors.second}.
 `;
 
 const missionTemplatePara3 = `
